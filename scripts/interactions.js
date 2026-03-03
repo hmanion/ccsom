@@ -188,42 +188,27 @@
     }
 
     var ladderShell = document.getElementById('ladderSteps');
-    var detail = document.getElementById('ladderDetail');
-    if (!ladderShell || !detail || !data.escalation || !Array.isArray(data.escalation.ladder)) return;
+    if (!ladderShell || !data.escalation || !Array.isArray(data.escalation.ladder)) return;
 
     ladderShell.innerHTML = '';
 
-    function updateDetail(step) {
-      detail.innerHTML = '';
-      var h4 = document.createElement('h4');
-      h4.textContent = step.label;
-      var p1 = document.createElement('p');
-      p1.innerHTML = '<strong>When:</strong> ' + step.when;
-      var p2 = document.createElement('p');
-      p2.innerHTML = '<strong>Action:</strong> ' + step.action;
-      detail.appendChild(h4);
-      detail.appendChild(p1);
-      detail.appendChild(p2);
-    }
+    data.escalation.ladder.forEach(function (step) {
+      var line = document.createElement('article');
+      line.className = 'ladder-line';
 
-    data.escalation.ladder.forEach(function (step, index) {
-      var button = document.createElement('button');
-      button.className = 'ladder-step';
-      button.type = 'button';
-      button.setAttribute('data-ladder-step', step.id);
-      button.textContent = step.label;
-      button.addEventListener('click', function () {
-        Array.prototype.slice.call(ladderShell.querySelectorAll('.ladder-step')).forEach(function (item) {
-          item.classList.remove('active');
-        });
-        button.classList.add('active');
-        updateDetail(step);
-      });
-      ladderShell.appendChild(button);
-      if (index === 0) {
-        button.classList.add('active');
-        updateDetail(step);
-      }
+      var h3 = document.createElement('h3');
+      h3.textContent = step.label;
+
+      var pWhen = document.createElement('p');
+      pWhen.innerHTML = '<strong>When:</strong> ' + step.when;
+
+      var pAction = document.createElement('p');
+      pAction.innerHTML = '<strong>Action:</strong> ' + step.action;
+
+      line.appendChild(h3);
+      line.appendChild(pWhen);
+      line.appendChild(pAction);
+      ladderShell.appendChild(line);
     });
 
     var recurring = document.getElementById('recurringIssuesList');
@@ -248,11 +233,15 @@
 
     function applyMode(mode) {
       if (mode === 'after') {
-        withoutPanel.classList.add('muted');
+        withoutPanel.classList.add('hidden');
+        withoutPanel.classList.remove('muted');
+        withPanel.classList.remove('hidden');
         withPanel.classList.remove('muted');
       } else {
+        withoutPanel.classList.remove('hidden');
         withoutPanel.classList.remove('muted');
-        withPanel.classList.add('muted');
+        withPanel.classList.add('hidden');
+        withPanel.classList.remove('muted');
       }
     }
 

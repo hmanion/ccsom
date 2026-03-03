@@ -36,34 +36,36 @@
         <p class="page-intro">This view contrasts current operating pain points against the outcomes expected once the model is embedded.</p>
       </section>
 
-      <section class="card full">
-        <h2>Without vs With This Model</h2>
-        <div class="compare-shell">
-          <div class="compare-head">
-            <span>View mode</span>
-            <label class="slider-toggle" for="compareSlider">
-              <span class="slider-label">Without</span>
-              <input id="compareSlider" data-compare-toggle type="checkbox" role="switch" aria-label="Toggle between without and with model view" />
-              <span class="slider-track" aria-hidden="true"></span>
-              <span class="slider-label">With</span>
-            </label>
+      <section class="target-grid">
+        <section class="card">
+          <h2>Without vs With This Model</h2>
+          <div class="compare-shell">
+            <div class="compare-head">
+              <span>View mode</span>
+              <label class="slider-toggle" for="compareSlider">
+                <span class="slider-label">Without</span>
+                <input id="compareSlider" data-compare-toggle type="checkbox" role="switch" aria-label="Toggle between without and with model view" />
+                <span class="slider-track" aria-hidden="true"></span>
+                <span class="slider-label">With</span>
+              </label>
+            </div>
+            <div class="compare-panels">
+              <article class="compare-panel" data-panel="without">
+                <h3>Without this model</h3>
+                <ul id="withoutModelList" class="list-clean"><li>Loading...</li></ul>
+              </article>
+              <article class="compare-panel" data-panel="with">
+                <h3>With this model</h3>
+                <ul id="withModelList" class="list-clean"><li>Loading...</li></ul>
+              </article>
+            </div>
           </div>
-          <div class="compare-panels">
-            <article class="compare-panel" data-panel="without">
-              <h3>Without this model</h3>
-              <ul id="withoutModelList" class="list-clean"><li>Loading...</li></ul>
-            </article>
-            <article class="compare-panel" data-panel="with">
-              <h3>With this model</h3>
-              <ul id="withModelList" class="list-clean"><li>Loading...</li></ul>
-            </article>
-          </div>
-        </div>
-      </section>
+        </section>
 
-      <section class="card full">
-        <h2>Target State Outcomes</h2>
-        <ul id="midQ2List" class="list-clean"><li>Loading...</li></ul>
+        <section class="card">
+          <h2>Target State Outcomes</h2>
+          <ul id="midQ2List" class="list-clean"><li>Loading...</li></ul>
+        </section>
       </section>
     </main>
 
