@@ -18,6 +18,27 @@
   box-shadow: 0 8px 18px rgba(23, 39, 62, 0.08);
 }
 
+.overview-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.principle-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 10px;
+}
+
+.principle-item {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 10px 12px;
+  background: #fcfdff;
+  color: #30425e;
+  line-height: 1.45;
+}
+
 .level-card {
   border: 1px solid var(--border);
   border-radius: 8px;
@@ -172,6 +193,44 @@
   background: #fff;
 }
 
+.escalation-layout {
+  display: grid;
+  grid-template-columns: minmax(320px, 380px) minmax(0, 1fr);
+  gap: 16px;
+  align-items: stretch;
+}
+
+.escalation-rail {
+  height: 100%;
+}
+
+.escalation-main {
+  display: grid;
+  gap: 16px;
+}
+
+.ladder-expanded {
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.ladder-line {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 12px;
+  background: #fbfcff;
+}
+
+.ladder-line h3 {
+  margin: 0 0 8px;
+  font-size: 16px;
+  color: #1e2b42;
+}
+
+.ladder-line p {
+  margin: 6px 0;
+}
+
 .compare-shell {
   border: 1px solid var(--border);
   border-radius: 10px;
@@ -258,7 +317,7 @@
 
 .compare-panels {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
 }
 
 .compare-panel {
@@ -269,8 +328,26 @@
   border-left: 1px solid var(--border);
 }
 
+.compare-panel[data-panel="without"] {
+  background: rgba(240, 169, 90, 0.14);
+}
+
+.compare-panel[data-panel="with"] {
+  background: rgba(76, 191, 136, 0.14);
+}
+
 .compare-panel.muted {
   opacity: 0.4;
+}
+
+.compare-panel.hidden {
+  display: none;
+}
+
+.target-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 16px;
 }
 
 .flow-svg {
@@ -284,20 +361,104 @@
 .flowchart-shell {
   border: 1px solid var(--border);
   border-radius: 10px;
-  padding: 10px;
+  padding: 14px;
   background: linear-gradient(180deg, #ffffff 0%, #f9fbff 100%);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.9);
 }
 
 .support-flow-svg {
   width: 100%;
-  max-width: 920px;
+  max-width: 880px;
   height: auto;
   display: block;
   margin: 0 auto;
 }
 
+.flow-connectors path {
+  fill: none;
+  stroke: #9caac0;
+  stroke-width: 2.2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.flow-connectors path:nth-child(2),
+.flow-connectors path:nth-child(4),
+.flow-connectors path:nth-child(9) {
+  stroke: #d992c2;
+}
+
+.flow-connectors path:nth-child(8) {
+  stroke: #7fbf6b;
+}
+
+.flow-connectors path:nth-child(10) {
+  stroke: #6caed9;
+}
+
+.flow-nodes rect {
+  fill: #1c2433;
+  stroke: rgba(255, 255, 255, 0.16);
+  stroke-width: 1.5;
+  filter: drop-shadow(0 6px 12px rgba(22, 34, 54, 0.18));
+}
+
+.flow-node-title {
+  font-family: "Manrope", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  fill: #ffffff;
+}
+
+.flow-node-subtitle {
+  font-family: "Manrope", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  fill: rgba(255, 255, 255, 0.75);
+}
+
+.flow-level rect {
+  filter: drop-shadow(0 8px 14px rgba(23, 38, 62, 0.18));
+}
+
+.flow-level.level-1 rect {
+  fill: #e95db8;
+}
+
+.flow-level.level-2 rect {
+  fill: #40a7e2;
+}
+
+.flow-level.level-3 rect {
+  fill: #78ce54;
+}
+
+.flow-level text {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  fill: #ffffff;
+  dominant-baseline: middle;
+}
+
+.flow-labels text {
+  font-family: "Manrope", sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  fill: #536684;
+  letter-spacing: 0.03em;
+}
+
 @media (max-width: 768px) {
-  .compare-panels {
+  .target-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .escalation-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .overview-grid {
     grid-template-columns: 1fr;
   }
 

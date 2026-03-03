@@ -14,6 +14,8 @@
   --status-orange: #f0a95a;
   --status-red: #e47a7a;
   --status-dark: #7e899d;
+  --measure-max: 72ch;
+  --measure-min-card: 50ch;
 }
 
 * {
@@ -152,7 +154,7 @@ main {
 .grid {
   display: grid;
   gap: 20px;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 430px), 1fr));
 }
 
 .card {
@@ -173,6 +175,12 @@ main {
   line-height: 1.55;
 }
 
+.card p,
+.card ul,
+.card ol {
+  max-width: var(--measure-max);
+}
+
 .card h2 {
   margin-bottom: 8px;
 }
@@ -180,6 +188,7 @@ main {
 .page-intro {
   margin: 0;
   color: #435571;
+  max-width: var(--measure-max);
 }
 
 .list-clean {
@@ -261,6 +270,13 @@ footer {
 
   .hero {
     padding: 16px;
+  }
+
+  .card p,
+  .card ul,
+  .card ol,
+  .page-intro {
+    max-width: 100%;
   }
 
   .brand {
