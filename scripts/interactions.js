@@ -264,26 +264,51 @@
 
     matrix.innerHTML = '';
 
+    function buildPersonCell(names) {
+      var td = document.createElement('td');
+      var list = document.createElement('div');
+      list.className = 'name-list';
+      if (!names || !names.length) {
+        var empty = document.createElement('span');
+        empty.className = 'matrix-empty';
+        empty.textContent = '-';
+        td.appendChild(empty);
+        return td;
+      }
+      names.forEach(function (name) {
+        var chip = document.createElement('span');
+        chip.className = 'name-pill';
+        chip.textContent = name;
+        list.appendChild(chip);
+      });
+      td.appendChild(list);
+      return td;
+    }
+
     [
       [
         'Writers',
-        (data.peopleMatrix.writers && data.peopleMatrix.writers.junior || []).join(', '),
-        (data.peopleMatrix.writers && data.peopleMatrix.writers.midLevel || []).join(', '),
-        (data.peopleMatrix.writers && data.peopleMatrix.writers.senior || []).join(', ')
+        (data.peopleMatrix.writers && data.peopleMatrix.writers.junior) || [],
+        (data.peopleMatrix.writers && data.peopleMatrix.writers.midLevel) || [],
+        (data.peopleMatrix.writers && data.peopleMatrix.writers.senior) || []
       ],
       [
         'Internal SME',
-        (data.peopleMatrix.internalSME && data.peopleMatrix.internalSME.junior || []).join(', '),
-        (data.peopleMatrix.internalSME && data.peopleMatrix.internalSME.midLevel || []).join(', '),
-        (data.peopleMatrix.internalSME && data.peopleMatrix.internalSME.senior || []).join(', ')
+        (data.peopleMatrix.internalSME && data.peopleMatrix.internalSME.junior) || [],
+        (data.peopleMatrix.internalSME && data.peopleMatrix.internalSME.midLevel) || [],
+        (data.peopleMatrix.internalSME && data.peopleMatrix.internalSME.senior) || []
       ]
     ].forEach(function (row) {
       var tr = document.createElement('tr');
-      row.forEach(function (cellValue) {
-        var td = document.createElement('td');
-        td.textContent = cellValue || '-';
-        tr.appendChild(td);
-      });
+      var rowHead = document.createElement('th');
+      rowHead.scope = 'row';
+      rowHead.className = 'matrix-rowhead';
+      rowHead.textContent = row[0];
+      tr.appendChild(rowHead);
+
+      tr.appendChild(buildPersonCell(row[1]));
+      tr.appendChild(buildPersonCell(row[2]));
+      tr.appendChild(buildPersonCell(row[3]));
       matrix.appendChild(tr);
     });
   }
