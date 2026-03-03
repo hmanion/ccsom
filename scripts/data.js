@@ -22,8 +22,7 @@ window.CCSOM_DATA = {
       ],
       roles: [
         { role: "CC", assignee: "Any Senior Writer or Internal SME" },
-        { role: "Sign-off", assignee: "Associate Editor or Internal SME" },
-        { role: "Draft stage", assignee: "Planning call prep + first drafts" },
+        { role: "Sign-off", assignee: "Associate Editor or Internal SME (Planning call prep + first drafts)" },
         { role: "Support", assignee: "Internal SME or Rob Scott" }
       ],
       qaModel: "Planning call prep shared more than 72 hours before planning call (with sign-off reviewer)."
@@ -38,8 +37,7 @@ window.CCSOM_DATA = {
       ],
       roles: [
         { role: "CC", assignee: "Any mid-level or senior writer" },
-        { role: "Sign-off", assignee: "Associate Editor" },
-        { role: "Draft stage", assignee: "First drafts" },
+        { role: "Sign-off", assignee: "Associate Editor (First drafts)" },
         { role: "Support", assignee: "Optional internal SME, consulted when needed" }
       ],
       qaModel: "Sampling post-planning call."

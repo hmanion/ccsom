@@ -51,14 +51,18 @@
 
       <section class="card full">
         <h2>Capability Matrix</h2>
+        <p class="subtitle">View writer and internal-SME capability coverage by level.</p>
         <div class="table-wrap">
-          <table class="table">
+          <table class="table matrix-table">
             <thead>
+              <tr class="matrix-superhead">
+                <th rowspan="2" scope="col">Discipline</th>
+                <th colspan="3" scope="colgroup">Capability Level</th>
+              </tr>
               <tr>
-                <th>Group</th>
-                <th>Junior</th>
-                <th>Mid-level</th>
-                <th>Senior</th>
+                <th scope="col">Junior</th>
+                <th scope="col">Mid-level</th>
+                <th scope="col">Senior</th>
               </tr>
             </thead>
             <tbody id="peopleMatrixBody"></tbody>
@@ -66,10 +70,6 @@
         </div>
       </section>
     </main>
-
-    <footer>
-      Role accountability sits with Editorial and scales through clear support layers.
-    </footer>
   </div>
 
   <script src="scripts/data.js"></script>
