@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CCSOM | Planning Governance</title>
+  <link rel="stylesheet" href="styles/base.css" />
+  <link rel="stylesheet" href="styles/pages.css" />
+</head>
+<body>
+  <div class="page">
+    <header class="hero">
+      <div class="brand">
+        <img src="assets/TodayDigital_Icon.png" alt="Today Digital" class="logo" />
+        <div>
+          <p class="eyebrow">Campaign Content Support Operating Model</p>
+          <h1>Planning Governance</h1>
+          <p class="subtitle">This page covers planning-call preparation, planning QA rhythm, and planning-stage sign-off only.</p>
+        </div>
+      </div>
+      <nav class="main-nav sticky-nav" aria-label="Primary navigation">
+        <button class="mobile-nav-toggle" aria-expanded="false" aria-controls="navLinks">Menu</button>
+        <div id="navLinks" class="nav-links">
+          <a href="index.html" class="nav-link">Overview</a>
+          <a href="support-levels.html" class="nav-link">Support Levels</a>
+          <a href="roles.html" class="nav-link">Roles</a>
+          <a href="governance.html" class="nav-link">Planning</a>
+          <a href="escalation.html" class="nav-link">Escalation</a>
+          <a href="target-state.html" class="nav-link">Target State</a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="card full">
+        <p class="page-intro">Use this as the planning playbook: how writers prepare, how planning quality is reviewed, and how planning-stage support is assigned.</p>
+      </section>
+
+      <section class="grid">
+        <article class="card">
+          <h2>Planning Prep Checklist</h2>
+          <ul id="prepList" class="list-clean"><li>Loading...</li></ul>
+        </article>
+        <article class="card">
+          <h2>Planning Weekly Rhythm</h2>
+          <ul id="rhythmList" class="list-clean"><li>Loading...</li></ul>
+        </article>
+      </section>
+
+      <section class="card full">
+        <h2>Planning QA Coverage Model</h2>
+        <div class="kpi-grid">
+          <div class="kpi"><div class="value">100%</div><div class="label">Level 1 + Juniors</div></div>
+          <div class="kpi"><div class="value">50%</div><div class="label">Level 2 + Mid-level</div></div>
+          <div class="kpi"><div class="value">Sample</div><div class="label">Level 3 + Senior/SME</div></div>
+        </div>
+        <ul id="qaCoverageList" class="list-clean"><li>Loading...</li></ul>
+      </section>
+
+      <section class="card full">
+        <h2>Planning QA Flow</h2>
+        <svg class="flow-svg" viewBox="0 0 840 220" role="img" aria-label="Planning call QA flow">
+          <rect x="30" y="60" width="220" height="90" rx="10" fill="#f4f7ff" stroke="#d9e2f0"></rect>
+          <text x="50" y="95" font-size="14" fill="#223149">Planning Call Prep</text>
+          <text x="50" y="118" font-size="12" fill="#4f607b">Writer uses template</text>
+          <rect x="310" y="60" width="220" height="90" rx="10" fill="#f4f7ff" stroke="#d9e2f0"></rect>
+          <text x="330" y="95" font-size="14" fill="#223149">Risk-Based QA</text>
+          <text x="330" y="118" font-size="12" fill="#4f607b">Coverage by level + seniority</text>
+          <rect x="590" y="60" width="220" height="90" rx="10" fill="#f4f7ff" stroke="#d9e2f0"></rect>
+          <text x="610" y="95" font-size="14" fill="#223149">Intervention Trigger</text>
+          <text x="610" y="118" font-size="12" fill="#4f607b">Pattern detection and support plan</text>
+          <line x1="250" y1="105" x2="310" y2="105" stroke="#5e87ff" stroke-width="3"></line>
+          <line x1="530" y1="105" x2="590" y2="105" stroke="#5e87ff" stroke-width="3"></line>
+        </svg>
+      </section>
+
+      <section class="card full">
+        <h2>Planning Drafting and Sign-off by Seniority</h2>
+        <div class="table-wrap">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Writer Level</th>
+                <th>Model</th>
+              </tr>
+            </thead>
+            <tbody id="draftingTableBody"></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      The goal is consistent planning quality without over-policing.
+    </footer>
+  </div>
+
+  <script src="scripts/data.js"></script>
+  <script src="scripts/nav.js"></script>
+  <script src="scripts/interactions.js"></script>
+</body>
+</html>

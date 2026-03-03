@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CCSOM | Roles and Responsibilities</title>
+  <link rel="stylesheet" href="styles/base.css" />
+  <link rel="stylesheet" href="styles/pages.css" />
+</head>
+<body>
+  <div class="page">
+    <header class="hero">
+      <div class="brand">
+        <img src="assets/TodayDigital_Icon.png" alt="Today Digital" class="logo" />
+        <div>
+          <p class="eyebrow">Campaign Content Support Operating Model</p>
+          <h1>Roles and Responsibilities</h1>
+          <p class="subtitle">Editorial quality ownership is distributed, explicit, and capacity constrained.</p>
+        </div>
+      </div>
+      <nav class="main-nav sticky-nav" aria-label="Primary navigation">
+        <button class="mobile-nav-toggle" aria-expanded="false" aria-controls="navLinks">Menu</button>
+        <div id="navLinks" class="nav-links">
+          <a href="index.html" class="nav-link">Overview</a>
+          <a href="support-levels.html" class="nav-link">Support Levels</a>
+          <a href="roles.html" class="nav-link">Roles</a>
+          <a href="governance.html" class="nav-link">Planning</a>
+          <a href="escalation.html" class="nav-link">Escalation</a>
+          <a href="target-state.html" class="nav-link">Target State</a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="card full">
+        <p class="page-intro">This page defines who owns quality at each line of support and where specialist intervention fits.</p>
+      </section>
+
+      <section class="card full">
+        <h2>Capacity Rule</h2>
+        <div class="callout">
+          No senior/SME should support more than 3 escalations at a time. The Production Editor distributes and reallocates where needed.
+        </div>
+      </section>
+
+      <section class="card full">
+        <h2>Role Detail</h2>
+        <p>Select a role to expand details.</p>
+        <div id="roleAccordionContainer"></div>
+      </section>
+
+      <section class="card full">
+        <h2>Capability Matrix</h2>
+        <div class="table-wrap">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Group</th>
+                <th>Junior</th>
+                <th>Mid-level</th>
+                <th>Senior</th>
+              </tr>
+            </thead>
+            <tbody id="peopleMatrixBody"></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      Role accountability sits with Editorial and scales through clear support layers.
+    </footer>
+  </div>
+
+  <script src="scripts/data.js"></script>
+  <script src="scripts/nav.js"></script>
+  <script src="scripts/interactions.js"></script>
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CCSOM | Support Levels</title>
+  <link rel="stylesheet" href="styles/base.css" />
+  <link rel="stylesheet" href="styles/pages.css" />
+</head>
+<body>
+  <div class="page">
+    <header class="hero">
+      <div class="brand">
+        <img src="assets/TodayDigital_Icon.png" alt="Today Digital" class="logo" />
+        <div>
+          <p class="eyebrow">Campaign Content Support Operating Model</p>
+          <h1>Campaign Support Levels</h1>
+          <p class="subtitle">At campaign start, Production Editor and Client Services Lead agree risk level and support profile.</p>
+        </div>
+      </div>
+      <nav class="main-nav sticky-nav" aria-label="Primary navigation">
+        <button class="mobile-nav-toggle" aria-expanded="false" aria-controls="navLinks">Menu</button>
+        <div id="navLinks" class="nav-links">
+          <a href="index.html" class="nav-link">Overview</a>
+          <a href="support-levels.html" class="nav-link">Support Levels</a>
+          <a href="roles.html" class="nav-link">Roles</a>
+          <a href="governance.html" class="nav-link">Planning</a>
+          <a href="escalation.html" class="nav-link">Escalation</a>
+          <a href="target-state.html" class="nav-link">Target State</a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="card full">
+        <p class="page-intro">Each campaign is assigned a risk level at kickoff so support and QA are proportionate from day one.</p>
+      </section>
+
+      <section class="card full">
+        <h2>Support Level Decision Flow</h2>
+        <div class="flowchart-shell">
+          <svg class="support-flow-svg" viewBox="0 0 1200 820" role="img" aria-label="Support level decision flowchart">
+            <defs>
+              <marker id="arrowHead" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto">
+                <path d="M0,0 L9,3.5 L0,7 z" fill="#9aa8ba"></path>
+              </marker>
+            </defs>
+
+            <line x1="250" y1="150" x2="250" y2="170" stroke="#9aa8ba" stroke-width="3" marker-end="url(#arrowHead)"></line>
+            <line x1="250" y1="290" x2="250" y2="310" stroke="#9aa8ba" stroke-width="3" marker-end="url(#arrowHead)"></line>
+            <line x1="250" y1="430" x2="250" y2="450" stroke="#9aa8ba" stroke-width="3" marker-end="url(#arrowHead)"></line>
+            <line x1="250" y1="570" x2="250" y2="640" stroke="#9aa8ba" stroke-width="3" marker-end="url(#arrowHead)"></line>
+
+            <polyline points="430,90 840,90 840,160" fill="none" stroke="#9aa8ba" stroke-width="3" marker-end="url(#arrowHead)"></polyline>
+            <polyline points="430,230 560,230 560,390 630,390" fill="none" stroke="#9aa8ba" stroke-width="3" marker-end="url(#arrowHead)"></polyline>
+            <line x1="430" y1="370" x2="630" y2="370" stroke="#9aa8ba" stroke-width="3" marker-end="url(#arrowHead)"></line>
+            <polyline points="430,510 560,510 560,390 630,390" fill="none" stroke="#9aa8ba" stroke-width="3" marker-end="url(#arrowHead)"></polyline>
+
+            <line x1="840" y1="315" x2="840" y2="260" stroke="#9aa8ba" stroke-width="3" marker-end="url(#arrowHead)"></line>
+            <line x1="840" y1="465" x2="840" y2="640" stroke="#9aa8ba" stroke-width="3" marker-end="url(#arrowHead)"></line>
+
+            <polygon points="250,30 430,90 250,150 70,90" fill="#1c2045"></polygon>
+            <text x="250" y="86" text-anchor="middle" fill="#ffffff" font-size="14" font-weight="700" font-family="Manrope, sans-serif">Is the client a Tier 1?</text>
+            <text x="250" y="108" text-anchor="middle" fill="#ffffff" font-size="12" font-weight="600" font-family="Manrope, sans-serif">e.g. Zoom, Microsoft</text>
+
+            <polygon points="250,170 430,230 250,290 70,230" fill="#1c2045"></polygon>
+            <text x="250" y="226" text-anchor="middle" fill="#ffffff" font-size="14" font-weight="700" font-family="Manrope, sans-serif">Has the client worked</text>
+            <text x="250" y="248" text-anchor="middle" fill="#ffffff" font-size="14" font-weight="700" font-family="Manrope, sans-serif">with us before?</text>
+
+            <polygon points="250,310 430,370 250,430 70,370" fill="#1c2045"></polygon>
+            <text x="250" y="366" text-anchor="middle" fill="#ffffff" font-size="13" font-weight="700" font-family="Manrope, sans-serif">Is the campaign topic a niche</text>
+            <text x="250" y="388" text-anchor="middle" fill="#ffffff" font-size="13" font-weight="700" font-family="Manrope, sans-serif">or complex subject?</text>
+
+            <polygon points="250,450 430,510 250,570 70,510" fill="#1c2045"></polygon>
+            <text x="250" y="506" text-anchor="middle" fill="#ffffff" font-size="14" font-weight="700" font-family="Manrope, sans-serif">Is the writer confident</text>
+            <text x="250" y="528" text-anchor="middle" fill="#ffffff" font-size="14" font-weight="700" font-family="Manrope, sans-serif">on this topic?</text>
+
+            <polygon points="840,315 1050,390 840,465 630,390" fill="#1c2045"></polygon>
+            <text x="840" y="384" text-anchor="middle" fill="#ffffff" font-size="13" font-weight="700" font-family="Manrope, sans-serif">Do we have an internal SME</text>
+            <text x="840" y="406" text-anchor="middle" fill="#ffffff" font-size="13" font-weight="700" font-family="Manrope, sans-serif">confident on this topic?</text>
+
+            <rect x="700" y="160" rx="42" ry="42" width="280" height="100" fill="#e95db8"></rect>
+            <text x="840" y="220" text-anchor="middle" fill="#ffffff" font-size="26" font-weight="800" font-family="Space Grotesk, sans-serif">Level 1</text>
+
+            <rect x="700" y="640" rx="42" ry="42" width="280" height="100" fill="#40a7e2"></rect>
+            <text x="840" y="700" text-anchor="middle" fill="#ffffff" font-size="26" font-weight="800" font-family="Space Grotesk, sans-serif">Level 2</text>
+
+            <rect x="110" y="640" rx="42" ry="42" width="280" height="100" fill="#78ce54"></rect>
+            <text x="250" y="700" text-anchor="middle" fill="#ffffff" font-size="26" font-weight="800" font-family="Space Grotesk, sans-serif">Level 3</text>
+
+            <text x="445" y="96" fill="#24344f" font-size="12" font-weight="700" font-family="Manrope, sans-serif">Yes</text>
+            <text x="238" y="166" fill="#24344f" font-size="12" font-weight="700" font-family="Manrope, sans-serif">No</text>
+            <text x="442" y="236" fill="#24344f" font-size="12" font-weight="700" font-family="Manrope, sans-serif">No</text>
+            <text x="238" y="306" fill="#24344f" font-size="12" font-weight="700" font-family="Manrope, sans-serif">Yes</text>
+            <text x="442" y="376" fill="#24344f" font-size="12" font-weight="700" font-family="Manrope, sans-serif">Yes</text>
+            <text x="442" y="516" fill="#24344f" font-size="12" font-weight="700" font-family="Manrope, sans-serif">No</text>
+            <text x="238" y="610" fill="#24344f" font-size="12" font-weight="700" font-family="Manrope, sans-serif">Yes</text>
+            <text x="826" y="307" fill="#24344f" font-size="12" font-weight="700" font-family="Manrope, sans-serif">No</text>
+            <text x="826" y="624" fill="#24344f" font-size="12" font-weight="700" font-family="Manrope, sans-serif">Yes</text>
+          </svg>
+        </div>
+      </section>
+
+      <section class="card full">
+        <h2>Support Levels</h2>
+        <div id="supportLevelContainer" class="grid" aria-live="polite"></div>
+      </section>
+    </main>
+
+    <footer>
+      Risk-based oversight improves quality while avoiding universal bottlenecks.
+    </footer>
+  </div>
+
+  <script src="scripts/data.js"></script>
+  <script src="scripts/nav.js"></script>
+  <script src="scripts/interactions.js"></script>
+</body>
+</html>

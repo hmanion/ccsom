@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CCSOM | Escalation</title>
+  <link rel="stylesheet" href="styles/base.css" />
+  <link rel="stylesheet" href="styles/pages.css" />
+</head>
+<body>
+  <div class="page">
+    <header class="hero">
+      <div class="brand">
+        <img src="assets/TodayDigital_Icon.png" alt="Today Digital" class="logo" />
+        <div>
+          <p class="eyebrow">Campaign Content Support Operating Model</p>
+          <h1>Escalation Framework</h1>
+          <p class="subtitle">Escalation is structured, layered, and focused on fixing recurring patterns.</p>
+        </div>
+      </div>
+      <nav class="main-nav sticky-nav" aria-label="Primary navigation">
+        <button class="mobile-nav-toggle" aria-expanded="false" aria-controls="navLinks">Menu</button>
+        <div id="navLinks" class="nav-links">
+          <a href="index.html" class="nav-link">Overview</a>
+          <a href="support-levels.html" class="nav-link">Support Levels</a>
+          <a href="roles.html" class="nav-link">Roles</a>
+          <a href="governance.html" class="nav-link">Planning</a>
+          <a href="escalation.html" class="nav-link">Escalation</a>
+          <a href="target-state.html" class="nav-link">Target State</a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="card full">
+        <p class="page-intro">Escalation is a structured intervention path that protects quality without bypassing editorial ownership.</p>
+      </section>
+
+      <section class="card full">
+        <h2>30-Day Escalation Plan</h2>
+        <p>Escalation is a 30-day shadowing plan where the Content Creator shares thinking and writing with a designated reviewer. The Production Editor confirms whether this plan is required and assigns support.</p>
+      </section>
+
+      <section class="grid">
+        <article class="card">
+          <h2>Escalation Criteria</h2>
+          <ul id="escalationCriteria" class="list-clean"><li>Loading...</li></ul>
+        </article>
+        <article class="card">
+          <h2>Escalation Ladder</h2>
+          <div class="ladder" id="ladderSteps"></div>
+          <div class="ladder-detail" id="ladderDetail" aria-live="polite"></div>
+        </article>
+      </section>
+
+      <section class="card full">
+        <h2>Recurring Issues Process</h2>
+        <ul id="recurringIssuesList" class="list-clean"><li>Loading...</li></ul>
+        <div class="callout">Anyone can recommend escalation, but it should not bypass the ladder.</div>
+      </section>
+    </main>
+
+    <footer>
+      The objective is improvement over firefighting.
+    </footer>
+  </div>
+
+  <script src="scripts/data.js"></script>
+  <script src="scripts/nav.js"></script>
+  <script src="scripts/interactions.js"></script>
+</body>
+</html>
