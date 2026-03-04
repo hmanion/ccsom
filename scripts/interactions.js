@@ -313,6 +313,248 @@
     });
   }
 
+  function buildClusterData(mode, peopleMatrix) {
+    if (!peopleMatrix) return [];
+
+    var writers = peopleMatrix.writers || {};
+    var sme = peopleMatrix.internalSME || {};
+
+    function dedupeOrdered(names) {
+      var seen = Object.create(null);
+      var out = [];
+      (names || []).forEach(function (name) {
+        if (!name || seen[name]) return;
+        seen[name] = true;
+        out.push(name);
+      });
+      return out;
+    }
+
+    if (mode === 'sme') {
+      return [
+        {
+          label: 'Standard',
+          names: dedupeOrdered(
+            []
+              .concat(writers.junior || [])
+              .concat(writers.midLevel || [])
+              .concat(writers.senior || [])
+          )
+        },
+        {
+          label: 'Internal SME',
+          names: dedupeOrdered(
+            []
+              .concat(sme.junior || [])
+              .concat(sme.midLevel || [])
+              .concat(sme.senior || [])
+          )
+        }
+      ];
+    }
+
+    if (mode === 'role') {
+      var roleGroups = data.peopleRoleGroups || {};
+      return [
+        {
+          label: 'Journalist',
+          names: dedupeOrdered(roleGroups.journalist || [])
+        },
+        {
+          label: 'Evangelist',
+          names: dedupeOrdered(roleGroups.evangelist || [])
+        },
+        {
+          label: 'Associate Editor',
+          names: dedupeOrdered(roleGroups.associateEditor || [])
+        }
+      ];
+    }
+
+    if (mode === 'publication') {
+      var publicationGroups = data.peoplePublicationGroups || {};
+      return [
+        {
+          label: 'CX Today',
+          names: dedupeOrdered(publicationGroups.cxToday || [])
+        },
+        {
+          label: 'UC Today',
+          names: dedupeOrdered(publicationGroups.ucToday || [])
+        }
+      ];
+    }
+
+    return [
+      {
+        label: 'Junior',
+        names: dedupeOrdered([].concat(writers.junior || []).concat(sme.junior || []))
+      },
+      {
+        label: 'Mid-level',
+        names: dedupeOrdered([].concat(writers.midLevel || []).concat(sme.midLevel || []))
+      },
+      {
+        label: 'Senior',
+        names: dedupeOrdered([].concat(writers.senior || []).concat(sme.senior || []))
+      }
+    ];
+  }
+
+  function renderPeopleClusters(selectedModes) {
+    var container = document.getElementById('peopleClusterGroups');
+    if (!container) return;
+
+    container.innerHTML = '';
+
+    if (!selectedModes || !selectedModes.length) {
+      var emptySelection = document.createElement('p');
+      emptySelection.className = 'cluster-empty';
+      emptySelection.textContent = 'Select at least one grouping.';
+      container.appendChild(emptySelection);
+      return;
+    }
+
+    function intersectByOrder(a, b) {
+      var setB = Object.create(null);
+      (b || []).forEach(function (name) {
+        setB[name] = true;
+      });
+      var out = [];
+      var seen = Object.create(null);
+      (a || []).forEach(function (name) {
+        if (setB[name] && !seen[name]) {
+          seen[name] = true;
+          out.push(name);
+        }
+      });
+      return out;
+    }
+
+    function createClusterCard(labels, names) {
+      var card = document.createElement('article');
+      card.className = 'cluster-group';
+
+      var hub = document.createElement('div');
+      hub.className = 'cluster-hub';
+      labels.forEach(function (label) {
+        var pill = document.createElement('span');
+        pill.className = 'cluster-group-pill';
+        pill.textContent = label;
+        hub.appendChild(pill);
+      });
+
+      var members = document.createElement('div');
+      members.className = 'name-list cluster-members';
+      names.forEach(function (name) {
+        var chip = document.createElement('span');
+        chip.className = 'name-pill';
+        chip.textContent = name;
+        members.appendChild(chip);
+      });
+
+      card.appendChild(hub);
+      card.appendChild(members);
+      return card;
+    }
+
+    if (selectedModes.length === 1) {
+      var groups = buildClusterData(selectedModes[0], data.peopleMatrix).filter(function (group) {
+        return group.names && group.names.length;
+      });
+      if (!groups.length) {
+        var noGroups = document.createElement('p');
+        noGroups.className = 'cluster-empty';
+        noGroups.textContent = 'No people available for the selected grouping.';
+        container.appendChild(noGroups);
+        return;
+      }
+
+      groups.forEach(function (group) {
+        container.appendChild(createClusterCard([group.label], group.names));
+      });
+      return;
+    }
+
+    var axisX = selectedModes[0];
+    var axisY = selectedModes[1];
+
+    var xGroups = buildClusterData(axisX, data.peopleMatrix).filter(function (group) {
+      return group.names && group.names.length;
+    });
+    var yGroups = buildClusterData(axisY, data.peopleMatrix).filter(function (group) {
+      return group.names && group.names.length;
+    });
+
+    if (!xGroups.length || !yGroups.length) {
+      var empty = document.createElement('p');
+      empty.className = 'cluster-empty';
+      empty.textContent = 'No people available for the selected groupings.';
+      container.appendChild(empty);
+      return;
+    }
+
+    var foundAny = false;
+    yGroups.forEach(function (yGroup) {
+      xGroups.forEach(function (xGroup) {
+        var intersection = intersectByOrder(xGroup.names, yGroup.names);
+        if (!intersection.length) return;
+        foundAny = true;
+        container.appendChild(createClusterCard([yGroup.label, xGroup.label], intersection));
+      });
+    });
+
+    if (!foundAny) {
+      var none = document.createElement('p');
+      none.className = 'cluster-empty';
+      none.textContent = 'No overlapping people for the selected pair.';
+      container.appendChild(none);
+    }
+  }
+
+  function initPeopleClusters() {
+    var buttons = Array.prototype.slice.call(document.querySelectorAll('[data-cluster-option]'));
+    if (!buttons.length || !data.peopleMatrix) return;
+
+    var selected = ['seniority'];
+
+    function setButtonState() {
+      buttons.forEach(function (btn) {
+        var mode = btn.getAttribute('data-cluster-option');
+        var isActive = selected.indexOf(mode) !== -1;
+        btn.classList.toggle('active', isActive);
+        btn.setAttribute('aria-pressed', String(isActive));
+      });
+    }
+
+    function update() {
+      setButtonState();
+      renderPeopleClusters(selected.slice(0, 2));
+    }
+
+    buttons.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var mode = btn.getAttribute('data-cluster-option');
+        var idx = selected.indexOf(mode);
+
+        if (idx !== -1) {
+          if (selected.length === 1) return;
+          selected.splice(idx, 1);
+          update();
+          return;
+        }
+
+        if (selected.length >= 2) {
+          selected.shift();
+        }
+        selected.push(mode);
+        update();
+      });
+    });
+
+    update();
+  }
+
   document.addEventListener('DOMContentLoaded', function () {
     initSupportLevels();
     initRolesRender();
@@ -320,5 +562,6 @@
     initEscalationRender();
     initTargetStateRender();
     initPeopleMatrix();
+    initPeopleClusters();
   });
 })();

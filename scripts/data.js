@@ -236,5 +236,14 @@ window.CCSOM_DATA = {
       midLevel: ["Nicole Willing"],
       senior: ["Rob Wilkinson", "Kieran Devlin", "Rhys Fisher"]
     }
+  },
+  peopleRoleGroups: {
+    journalist: ["Fran Roche", "Kristian McCann", "Christopher Carey", "Nicole Willing"],
+    evangelist: ["Marcus Law", "Rob Wilkinson"],
+    associateEditor: ["Kieran Devlin", "Rhys Fisher"]
+  },
+  peoplePublicationGroups: {
+    cxToday: ["Fran Roche", "Nicole Willing", "Rob Wilkinson", "Rhys Fisher"],
+    ucToday: ["Kristian McCann", "Christopher Carey", "Marcus Law", "Kieran Devlin"]
   }
 };

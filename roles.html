@@ -69,6 +69,18 @@
           </table>
         </div>
       </section>
+
+      <section class="card full">
+        <h2>People Clusters</h2>
+        <p class="subtitle">Select one or two grouping pills. One shows grouped lists; two show cross-group intersections.</p>
+        <div class="cluster-pill-row" role="toolbar" aria-label="People cluster grouping options">
+          <button type="button" class="cluster-filter-btn active" data-cluster-option="seniority" aria-pressed="true">Seniority</button>
+          <button type="button" class="cluster-filter-btn" data-cluster-option="sme" aria-pressed="false">SME level</button>
+          <button type="button" class="cluster-filter-btn" data-cluster-option="role" aria-pressed="false">Role</button>
+          <button type="button" class="cluster-filter-btn" data-cluster-option="publication" aria-pressed="false">Publication</button>
+        </div>
+        <div id="peopleClusterGroups" class="cluster-groups" aria-live="polite"></div>
+      </section>
     </main>
   </div>
 
