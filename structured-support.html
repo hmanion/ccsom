@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>CCSOM | Escalation</title>
+  <title>CCSOM | Structured Support</title>
   <link rel="stylesheet" href="styles/base.css" />
   <link rel="stylesheet" href="styles/pages.css" />
 </head>
@@ -14,7 +14,7 @@
         <img src="assets/TodayDigital_Icon.png" alt="Today Digital" class="logo" />
         <div>
           <p class="eyebrow">Campaign Content Support Operating Model</p>
-          <h1>Escalation Framework</h1>
+          <h1>Structured Support</h1>
           <p class="subtitle">Escalation is structured, layered, and focused on fixing recurring patterns.</p>
         </div>
       </div>
@@ -22,42 +22,48 @@
         <button class="mobile-nav-toggle" aria-expanded="false" aria-controls="navLinks">Menu</button>
         <div id="navLinks" class="nav-links">
           <a href="index.html" class="nav-link">Overview</a>
-          <a href="support-levels.html" class="nav-link">Support Levels</a>
-          <a href="roles.html" class="nav-link">Roles</a>
-          <a href="governance.html" class="nav-link">Planning</a>
-          <a href="escalation.html" class="nav-link">Escalation</a>
-          <a href="target-state.html" class="nav-link">Target State</a>
+          <a href="campaign-levels.html" class="nav-link">Campaign Levels</a>
+          <a href="governance.html" class="nav-link">Quality and Governance</a>
+          <a href="structured-support.html" class="nav-link">Structured Support</a>
+          <a href="planning-calls.html" class="nav-link">Planning Calls</a>
         </div>
       </nav>
     </header>
 
     <main>
       <section class="card full">
-        <p class="page-intro">Escalation is a structured intervention path that protects quality without bypassing editorial ownership.</p>
+        <p id="structuredSupportIntro" class="page-intro">
+          Structured support is put in place when escalation criteria are met and the Production Editor confirms intervention is needed.
+        </p>
       </section>
 
       <section class="escalation-layout">
         <aside class="card escalation-rail">
-          <h2>Escalation Ladder</h2>
-          <p class="subtitle">Follow this sequence without bypassing lines.</p>
+          <h2>Support Ladder</h2>
+          <p class="subtitle">Support should escalate through experience levels.</p>
           <div class="ladder ladder-expanded" id="ladderSteps"></div>
         </aside>
 
         <div class="escalation-main">
           <section class="card">
-            <h2>30-Day Escalation Plan</h2>
-            <p>Escalation is a 30-day shadowing plan where the Content Creator shares thinking and writing with a designated reviewer. The Production Editor confirms whether this plan is required and assigns support.</p>
+            <h2>30-Day Structured Support Plan</h2>
+            <p id="structuredSupportDefinition">
+              Structured support includes a 30-day shadowing plan where the content creator shares thinking and writing with a designated reviewer.
+            </p>
           </section>
 
           <section class="card">
             <h2>Escalation Criteria</h2>
-            <ul id="escalationCriteria" class="list-clean"><li>Loading...</li></ul>
+            <ul id="structuredCriteriaList" class="list-clean">
+              <li>Loading...</li>
+            </ul>
           </section>
 
           <section class="card">
             <h2>Recurring Issues Process</h2>
-            <ul id="recurringIssuesList" class="list-clean"><li>Loading...</li></ul>
-            <div class="callout">Anyone can recommend escalation, but it should not bypass the ladder.</div>
+            <ul id="recurringIssuesList" class="list-clean">
+              <li>Loading...</li>
+            </ul>
           </section>
         </div>
       </section>
