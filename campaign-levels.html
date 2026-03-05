@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>CCSOM | Support Levels</title>
+  <title>CCSOM | Campaign Levels and Writer Experience</title>
   <link rel="stylesheet" href="styles/base.css" />
   <link rel="stylesheet" href="styles/pages.css" />
 </head>
@@ -14,35 +14,52 @@
         <img src="assets/TodayDigital_Icon.png" alt="Today Digital" class="logo" />
         <div>
           <p class="eyebrow">Campaign Content Support Operating Model</p>
-          <h1>Campaign Support Levels</h1>
-          <p class="subtitle">At campaign start, Production Editor and Client Services Lead agree risk level and support profile.</p>
+          <h1>Campaign Levels and Writer Experience</h1>
+          <p class="subtitle">Campaign risk level and writer seniority are aligned from day one.</p>
         </div>
       </div>
       <nav class="main-nav sticky-nav" aria-label="Primary navigation">
         <button class="mobile-nav-toggle" aria-expanded="false" aria-controls="navLinks">Menu</button>
         <div id="navLinks" class="nav-links">
           <a href="index.html" class="nav-link">Overview</a>
-          <a href="support-levels.html" class="nav-link">Support Levels</a>
-          <a href="roles.html" class="nav-link">Roles</a>
-          <a href="governance.html" class="nav-link">Planning</a>
-          <a href="escalation.html" class="nav-link">Escalation</a>
-          <a href="target-state.html" class="nav-link">Target State</a>
+          <a href="campaign-levels.html" class="nav-link">Campaign Levels</a>
+          <a href="governance.html" class="nav-link">Quality and Governance</a>
+          <a href="structured-support.html" class="nav-link">Structured Support</a>
+          <a href="planning-calls.html" class="nav-link">Planning Calls</a>
         </div>
       </nav>
     </header>
 
     <main>
       <section class="card full">
-        <p class="page-intro">Each campaign is assigned a risk level at kickoff so support and QA are proportionate from day one.</p>
+        <p id="campaignLevelsIntro" class="page-intro">
+          At campaign kickoff, the Production Editor and Client Services Lead agree the campaign risk level and support profile.
+        </p>
       </section>
 
       <section class="card full">
-        <h2>Support Levels</h2>
-        <div id="supportLevelContainer" class="grid" aria-live="polite"></div>
+        <h2>Campaign Levels</h2>
+        <div id="campaignLevelsContainer" class="grid" aria-live="polite"></div>
       </section>
 
       <section class="card full">
-        <h2>Support Level Decision Flow</h2>
+        <h2>Writer Experience</h2>
+        <div class="table-wrap">
+          <table class="table matrix-table">
+            <thead>
+              <tr>
+                <th>Level</th>
+                <th>Definition</th>
+                <th>Writers</th>
+              </tr>
+            </thead>
+            <tbody id="writerExperienceBody"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="card full">
+        <h2>Campaign Level Decision Tree</h2>
         <div class="flowchart-shell">
           <svg class="support-flow-svg" viewBox="0 0 900 760" role="img" aria-label="Support level decision flowchart">
             <defs>

@@ -1,169 +1,114 @@
 window.CCSOM_DATA = {
-  context: [
-    "Rob Scott stepped in to front and support the majority of campaigns during a transition phase in the second half of 2025. Now we have more journalists and more industry expertise available, we want to reduce Rob's direct involvement so he can focus his time where it is most needed in the business.",
-    "This is also an opportunity to empower senior journalists and build a robust system that develops individuals and teams together."
-  ],
-  corePrinciples: [
-    "Quality is designed in early, not just found at the end of production.",
-    "Oversight is risk based, not universal.",
-    "Support and intervention escalates based on clear criteria.",
-    "SME ownership sits with Editorial.",
-    "QA is about detecting patterns, not policing.",
-    "Rob's involvement should be strategic, not day to day operational.",
-    "No one should be a bottleneck."
-  ],
-  supportLevels: [
-    {
-      id: "level-1",
-      name: "Level 1 - High Risk",
-      defaultCriteria: [
-        "Tier 1 flagship accounts (like Microsoft)",
-        "Complex subject matter"
-      ],
-      roles: [
-        { role: "CC", assignee: "Any Senior Writer or Internal SME" },
-        { role: "Sign-off", assignee: "Associate Editor or Internal SME (Planning call prep + first drafts)" },
-        { role: "Support", assignee: "Internal SME or Rob Scott" }
-      ],
-      qaModel: "Planning call prep shared more than 72 hours before planning call (with sign-off reviewer)."
-    },
-    {
-      id: "level-2",
-      name: "Level 2 - Moderate Risk",
-      defaultCriteria: [
-        "New campaign topic for us",
-        "New client",
-        "Campaign topic is technical"
-      ],
-      roles: [
-        { role: "CC", assignee: "Any mid-level or senior writer" },
-        { role: "Sign-off", assignee: "Associate Editor (First drafts)" },
-        { role: "Support", assignee: "Optional internal SME, consulted when needed" }
-      ],
-      qaModel: "Sampling post-planning call."
-    },
-    {
-      id: "level-3",
-      name: "Level 3 - Low Risk",
-      defaultCriteria: [
-        "Existing client",
-        "Campaign topic is straightforward",
-        "Well matched to our writers' knowledge"
-      ],
-      roles: [
-        { role: "CC", assignee: "Any writer" },
-        { role: "Sign-off", assignee: "Not required" },
-        { role: "Support", assignee: "Optional Associate Editor or Internal SME when needed" }
-      ],
-      qaModel: "Retrospective QA only."
-    }
-  ],
-  roles: [
-    {
-      id: "content-creator",
-      title: "Content Creator",
-      summary: "Responsible for planning call preparation and early escalation.",
-      responsibilities: [
-        "Planning call preparation using best-practice template",
-        "Demonstrating subject knowledge",
-        "Aligning ideas to client goals",
-        "Proactively seeking SME support when needed"
-      ],
-      rules: ["Escalate uncertainty early, not just after feedback."]
-    },
-    {
-      id: "associate-editor",
-      title: "1st Line - Associate Editor",
-      summary: "Primary quality gate and editorial standards owner.",
-      responsibilities: [
-        "Subject expertise validation",
-        "Article draft sign-off",
-        "Reviewing planning call preparation",
-        "Coaching writers on structure and tone",
-        "Escalating when needed"
-      ],
-      rules: ["Associate Editors own editorial standards for their publication."]
-    },
-    {
-      id: "internal-sme",
-      title: "2nd Line - Internal SME",
-      summary: "Secondary support when deeper technical authority is required.",
-      responsibilities: [
-        "Strengthening concept direction",
-        "Validating framing and positioning",
-        "Supporting credibility in planning calls"
-      ],
-      rules: [
-        "Used when topic requires deeper technical authority.",
-        "Used when writer or editor is not confident about subject matter."
-      ]
-    },
-    {
-      id: "production-editor",
-      title: "Production Editor (Process and QA Layer)",
-      summary: "Coordinates quality process and recurring issue intervention.",
-      responsibilities: [
-        "Monitoring adherence to best-practice process",
-        "Reviewing planning call recordings (risk based)",
-        "Identifying recurring quality gaps",
-        "Triggering structured support where patterns appear",
-        "Coordinating 1-month intervention plans"
-      ],
-      rules: ["No senior or SME should support more than 3 escalations at a time."]
-    },
-    {
-      id: "publisher",
-      title: "Publisher (Rob Scott)",
-      summary: "Strategic involvement for high-risk and major client confidence concerns.",
-      responsibilities: [
-        "Kick-off calls (mandatory invite as optional attendee, not scheduled around)",
-        "Level 1 high-risk campaigns",
-        "Escalations from 2nd line",
-        "Major client confidence risks"
-      ],
-      rules: [
-        "Does not review routine drafts.",
-        "Does not monitor all planning calls.",
-        "Does not sit in recurring planning meetings by default."
-      ]
-    }
-  ],
-  governance: {
-    prep: [
-      "Clear proposed angles",
-      "Conducted subject research",
-      "Aligned the plan with the campaign objective"
+  landing: {
+    summary:
+      "A framework that aligns campaign risk with writer capability while keeping escalation simple.",
+    objectives: [
+      "Reduce direct Rob dependency so senior support is highly targeted.",
+      "Align campaign risk level with writer capability from kickoff.",
+      "Make quality ownership explicit across Editorial and Production.",
+      "Fix recurring patterns through structured support, not firefighting."
     ],
-    weeklyRhythm: [
-      "In Monday Editorial meeting, each writer shares planning calls for the week.",
-      "Writers confirm they used the planning structure and stored it in the campaign folder.",
-      "Writers flag SME support they might need.",
-      "Peer visibility reduces policing overhead."
+    withoutModel: [
+      "Rob is a bottleneck",
+      "Luke is an invisible safety net",
+      "Editors lack ownership and responsibility",
+      "Planning is inconsistent",
+      "Quality is personality-dependent"
     ],
-    qaCoverage: [
-      "Level 1 plus juniors: 100% reviewed within 3 days.",
-      "Level 2 plus mid-level: 50% reviewed within 3 days.",
-      "Level 3 plus senior/SME: sample-based monthly.",
-      "Focus is preparation quality, not stylistic micro-feedback."
+    withModel: [
+      "Rob's time is protected",
+      "Escalation is clear and structured",
+      "Responsibilities are distributed",
+      "Risk is identified early",
+      "Quality develops with the team"
     ],
-    draftingBySeniority: [
+    corePrinciples: [
+      "The model works by aligning campaign risk with writer capability, while keeping escalation simple.",
+      "Quality is designed-in early, not just found out about at the end of production.",
+      "Oversight is risk-based, not universal.",
+      "Support and intervention escalate based on clear criteria.",
+      "SME ownership sits with Editorial.",
+      "QA is about detecting patterns, not policing.",
+      "Rob's involvement should be strategic, not day-to-day operational.",
+      "No one should be a bottleneck."
+    ]
+  },
+  campaignLevels: {
+    intro:
+      "At campaign kickoff, the Production Editor and Client Services Lead agree the campaign risk level and support profile.",
+    levels: [
       {
-        level: "Junior/Graduate Writers",
-        model: "Mandatory sign-off on research and article drafts; regular internal-SME consultation as needed."
+        id: "level-1",
+        name: "Level 1",
+        risk: "Higher",
+        criteria: ["Tier 1 clients", "Complex subject matter"],
+        lead: "Senior Writers",
+        signOff: "No default sign-off required"
+      },
+      {
+        id: "level-2",
+        name: "Level 2",
+        risk: "Moderate",
+        criteria: ["New clients", "New topic area", "Technical topic"],
+        lead: "Mid-level or Senior Writers",
+        signOff: "Only Mid-level Writers require Senior sign-off"
+      },
+      {
+        id: "level-3",
+        name: "Level 3",
+        risk: "Low",
+        criteria: ["Existing client", "Familiar topic"],
+        lead: "Any Writer",
+        signOff: "Only Junior Writers require Senior sign-off"
+      }
+    ],
+    writerExperience: [
+      {
+        level: "Junior Writers",
+        definition: "Graduate or early-career writers.",
+        writers: ["Fran Roche"]
       },
       {
         level: "Mid-level Writers",
-        model: "Associate Editor oversight (not mandatory pre-publish if trusted); retrospective QA sampling."
+        definition:
+          "Experienced writers who are developing their subject matter expertise.",
+        writers: ["Kristian McCann", "Christopher Carey"]
       },
       {
         level: "Senior Writers",
-        model: "Associate Editor oversight (not mandatory pre-publish if trusted); retrospective QA sampling."
+        definition: "Experienced writers with solid subject matter expertise.",
+        writers: [
+          "Nicole Willing",
+          "Marcus Law",
+          "Rob Wilkinson",
+          "Kieran Devlin",
+          "Rhys Fisher"
+        ]
       }
     ]
   },
-  escalation: {
+  qualityGovernance: {
+    intro:
+      "Quality ownership is explicit, with Senior Writers and Associate Editors owning content quality while Production monitors process adherence.",
+    ownership: [
+      "Content quality is owned by Senior Writers, with Associate Editors responsible for their publications.",
+      "Process adherence and preparation quality is monitored by the Production Editor.",
+      "If something has already had Senior Writer support or review, it does not require Production Editor QA."
+    ],
+    processQA: [
+      "Monitoring adherence to best-practice process",
+      "Reviewing a sample of planning calls",
+      "Identifying recurring quality gaps",
+      "Co-ordinating structured support where patterns appear",
+      "Aligning campaigns with our expertise and capacity",
+      "Focus is preparation quality, not stylistic micro-feedback."
+    ]
+  },
+  structuredSupport: {
+    intro:
+      "Structured support is put in place when escalation criteria are met and the Production Editor confirms intervention is needed.",
     definition:
-      "Escalation is a 30-day shadowing plan where the Content Creator shares thinking and writing with a designated reviewer. The Production Editor confirms whether a 30-day plan is needed and assigns the right level of support. This should not bypass the escalation ladder.",
+      "Structured support includes a 30-day shadowing plan where the content creator shares thinking and writing with a designated reviewer.",
     criteria: [
       "Risk to our credibility as industry SMEs",
       "Not aligned to client expectations",
@@ -173,68 +118,50 @@ window.CCSOM_DATA = {
     ],
     ladder: [
       {
-        id: "line-1",
-        label: "1st Line - Associate Editor",
-        when: "Default first escalation step",
-        action: "Validate issues, coach structure/tone, and set immediate correction plan."
+        label: "First line: Senior Writer (peer support)",
+        when: "First support step for structured support",
+        actions: [
+          "Review planning call preparation",
+          "Support or provide subject expertise",
+          "Sign-off drafts before they go to the client",
+          "Coach on structure and tone",
+          "No Senior Writer should support more than 4 campaigns at a time."
+        ]
       },
       {
-        id: "line-2",
-        label: "2nd Line - Internal SME",
-        when: "Escalate when subject authority or confidence is still weak",
-        action: "Strengthen framing and credibility, support planning call readiness."
-      },
-      {
-        id: "line-3",
-        label: "3rd Line - Publisher (Rob)",
-        when: "Escalate major confidence risk or unresolved high-risk issue",
-        action: "Strategic intervention on high-risk account or significant client risk."
+        label: "Second line: Publisher (Rob Scott)",
+        when:
+          "Escalate when reputational risk is significant, expertise is missing, or client confidence requires senior involvement",
+        actions: [
+          "Provide targeted senior involvement for significant risk.",
+          "Rob is not a routine reviewer."
+        ]
       }
     ],
     recurringIssues: [
       "Issue reviewed and confirmed by Production Editor",
       "Structured 30-day support plan initiated",
-      "Senior writer or internal SME assigned as shadow",
-      "Clear measurable improvement targets",
-      "Review at end of 30 days"
+      "A senior writer or internal SME is assigned as shadow",
+      "Clear and measurable improvement targets",
+      "Review at end of 30 days",
+      "The goal is to fix patterns, not firefight incidents."
     ]
   },
-  targetState: {
-    withoutModel: [
-      "Rob is a bottleneck",
-      "Luke is an invisible safety net",
-      "Editors lack ownership and responsibility",
-      "Planning is inconsistent",
-      "Quality is personality dependent"
+  planningCalls: {
+    intro:
+      "Planning calls are a high client-risk moment, so preparation standards and weekly visibility are mandatory.",
+    prep: [
+      "Clear proposed angles",
+      "Conducted subject research",
+      "Aligned the plan with the campaign objective"
     ],
-    withModel: [
-      "Rob's time is protected",
-      "Escalation is clear and structured",
-      "Responsibilities are distributed",
-      "Risk is identified early",
-      "Quality develops with the team"
+    weeklyRhythm: [
+      "In Monday Editorial meeting, each writer shares planning calls for the week.",
+      "Writers confirm they used the planning structure and stored it in the campaign folder.",
+      "Writers flag any support needed for subject matter expertise.",
+      "Peer visibility reduces the amount of policing needed."
     ],
-    midQ2: [
-      "Clear expectations around level of support from campaign start",
-      "Planning calls are prepared for",
-      "Associate Editors confidently support quality",
-      "Senior SMEs are used strategically",
-      "Rob involved only in Tier 1 or true escalation",
-      "Fewer client surprises",
-      "Less firefighting",
-      "Higher confidence in campaign execution"
-    ]
-  },
-  peopleMatrix: {
-    writers: {
-      junior: ["Fran Roche"],
-      midLevel: ["Kristian McCann", "Christopher Carey"],
-      senior: ["Marcus Law"]
-    },
-    internalSME: {
-      junior: [],
-      midLevel: ["Nicole Willing"],
-      senior: ["Rob Wilkinson", "Kieran Devlin", "Rhys Fisher"]
-    }
+    visibilityNote:
+      "This peer visibility is to reduce the amount of policing needed."
   }
 };
